@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 150" role="img" aria-labelledby="title desc">
+  <title id="title">Verify-X</title>
+  <desc id="desc">Verify-X blue brand logo</desc>
+  <g fill="#3657ed">
+    <path d="M74 8a34 34 0 0 0-34 34h34V8Z"/>
+    <circle cx="98" cy="26" r="14"/>
+    <path d="M76 44v34a34 34 0 0 0 34-34H76Z"/>
+    <circle cx="55" cy="65" r="12"/>
+    <path d="M18 43h48v3H18zM76 43h52v3H76z" opacity=".45"/>
+  </g>
+  <text x="18" y="130" fill="#3657ed" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800">Verify-X</text>
+</svg>

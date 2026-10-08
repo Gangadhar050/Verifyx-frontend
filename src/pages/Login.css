@@ -1,0 +1,369 @@
+.vx-login-page {
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(126, 198, 255, .40), transparent 24%),
+    radial-gradient(circle at 88% 92%, rgba(115, 105, 255, .40), transparent 28%),
+    linear-gradient(118deg, #075df1 0%, #2448f5 42%, #5a27ef 70%, #7418dc 100%);
+}
+
+.vx-login-page::before,
+.vx-login-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vx-login-page::before {
+  opacity: .22;
+  background:
+    radial-gradient(ellipse at 26% 8%, transparent 0 41%, rgba(255,255,255,.48) 41.15% 41.4%, transparent 41.55%),
+    radial-gradient(ellipse at 78% 30%, transparent 0 44%, rgba(255,255,255,.34) 44.15% 44.38%, transparent 44.55%);
+}
+
+.vx-login-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(420px, 49%) minmax(560px, 51%);
+  align-items: stretch;
+}
+
+/*
+ * The source artwork also contains a sample login card on its right side.
+ * Show only the LEFT HALF of that artwork here. This keeps the illustration
+ * integrated with the blue/purple background while ensuring the sample card
+ * can never sit behind the real Candidate/HR login form.
+ */
+.vx-login-illustration {
+  min-height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  background-image: url('/login-unified-background.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 204% 100%;
+}
+
+.vx-login-form-area {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(34px, 5.5vh, 64px) clamp(36px, 5.5vw, 92px) clamp(34px, 5.5vh, 64px) 14px;
+}
+
+.vx-auth-login-card {
+  width: min(100%, 690px);
+  border-radius: 18px;
+  padding: clamp(34px, 4.8vh, 54px) clamp(38px, 4vw, 58px) clamp(30px, 4vh, 44px);
+  background: rgba(255, 255, 255, 0.985);
+  box-shadow: 0 28px 74px rgba(25, 18, 99, .24);
+  border: 1px solid rgba(255,255,255,.92);
+}
+
+.vx-login-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.vx-login-brand img {
+  width: 84px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.vx-auth-login-card h1 {
+  margin: 0;
+  color: #0756c9;
+  text-align: center;
+  font-size: clamp(27px, 2.15vw, 36px);
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.vx-login-subtitle {
+  margin: 7px auto clamp(24px, 3vh, 32px);
+  color: #575757;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 470px;
+}
+
+.vx-login-message {
+  margin: 0 0 15px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.vx-input-box {
+  min-height: 68px;
+  margin-bottom: 16px;
+  padding: 10px 15px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.vx-input-box:focus-within {
+  border-color: #1268dc;
+  box-shadow: 0 0 0 3px rgba(18, 104, 220, .09);
+}
+
+.vx-password-box {
+  grid-template-columns: 32px 1fr 34px;
+}
+
+.vx-input-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #050505;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.vx-key-icon {
+  border-radius: 50% 50% 3px 3px;
+  font-size: 11px;
+}
+
+.vx-input-content {
+  min-width: 0;
+}
+
+.vx-input-content label {
+  display: block;
+  margin: 0 0 3px;
+  color: #6b6b6b;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.vx-input-content input,
+.vx-input-content input:focus,
+.vx-input-content input:hover {
+  width: 100%;
+  height: 26px;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #272727 !important;
+  font-size: 13px !important;
+  font-weight: 600;
+}
+
+.vx-input-content input::placeholder {
+  color: #373737;
+  opacity: 1;
+}
+
+.vx-password-toggle {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #111;
+  font-size: 18px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.vx-login-options {
+  margin: 2px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.vx-remember-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.vx-remember-row input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #075bd8;
+}
+
+.vx-forgot-link,
+.vx-back-login {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #075bd8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vx-login-submit {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #0755d8 0%, #06a6ef 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 11px 24px rgba(1, 109, 221, .16);
+}
+
+.vx-login-submit:hover {
+  filter: brightness(1.025);
+}
+
+.vx-signup-line {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #222;
+  font-size: 12px;
+}
+
+.vx-signup-line a {
+  color: #075bd8;
+  text-decoration: none;
+}
+
+.vx-reset-label {
+  display: block;
+  margin: 12px 0 7px;
+  color: #444;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vx-reset-input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  background: #fff;
+  color: #222;
+}
+
+.vx-reset-input:focus {
+  outline: none;
+  border-color: #1268dc;
+  box-shadow: 0 0 0 3px rgba(18, 104, 220, .09);
+}
+
+.verification-tabs {
+  margin: 6px 0 18px;
+  background: #eff4ff;
+  border: 1px solid #dbe6fb;
+}
+
+.verification-tabs button.active {
+  color: #075bd8;
+  background: #fff;
+}
+
+.vx-back-login {
+  display: block;
+  margin: 17px auto 0;
+}
+
+@media (max-width: 1180px) {
+  .vx-login-shell {
+    grid-template-columns: 45% 55%;
+  }
+
+  .vx-login-form-area {
+    padding-right: 28px;
+  }
+
+  .vx-auth-login-card {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vx-login-page {
+    overflow: auto;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(117, 191, 255, .42), transparent 27%),
+      radial-gradient(circle at 84% 90%, rgba(113, 104, 255, .45), transparent 27%),
+      linear-gradient(135deg, #0f66f1 0%, #3739ec 50%, #741ddd 100%);
+  }
+
+  .vx-login-shell {
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+  }
+
+  .vx-login-illustration {
+    display: none;
+  }
+
+  .vx-login-form-area {
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .vx-auth-login-card {
+    width: min(100%, 580px);
+    padding: 34px 24px 30px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .vx-auth-login-card {
+    padding: 28px 17px 26px;
+  }
+
+  .vx-auth-login-card h1 {
+    font-size: 28px;
+  }
+
+  .vx-login-options {
+    align-items: flex-start;
+  }
+}
+
+/* Compact professional login card */
+.vx-auth-login-card {
+  width: min(100%, 530px);
+  padding: clamp(28px, 4vh, 42px) clamp(30px, 3.2vw, 42px) clamp(26px, 3.6vh, 36px);
+}
+
+@media (max-width: 760px) {
+  .vx-auth-login-card {
+    width: min(100%, 500px);
+  }
+}
